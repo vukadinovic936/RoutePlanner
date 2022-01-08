@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Flask Form</title>
+    </head>
+
+    <body>
+        <form action="{{ url_for("main")}}" method="post">
+        <h3>Current list of stops is:</h3>
+        {% for entry in city_names %}
+                <p> {{ entry }} </p>
+            <hr>
+        {% endfor %}
+
+        <label for="firstname">Stop name:</label>
+        <input type="text" id="city" name="city" placeholder="city">
+        <input type="submit" name="submit_button" value="add_stop">
+        <input type="submit" name="submit_button" value="clear">
+        <input type="submit" name="submit_button" value="calculate">
+    </body>
+</html>

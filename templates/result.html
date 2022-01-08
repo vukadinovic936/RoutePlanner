@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskBlog</title>
+</head>
+<body>
+   <h1>Route Planner</h1>
+	<h3>The shortest distance is: {{ dic['min_distance'] }} km </h3>
+    {% for entry in dic['shortest_path'] %}
+        <a href={{ entry['link'] }}>
+            <h2> {{entry['path']}} </h2>
+        </a>
+        <hr>
+    {% endfor %}
+
+	<form action="{{ url_for("result")}}" method="post">
+	<input type="submit" name="submit_button" value="back">
+</body>
+</html>
